@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Faculty;
+use App\Models\ParentModel;
+use App\Models\Country;
+use App\Models\Student;
+
 
 class StudentController extends Controller
 {
@@ -13,8 +18,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-      $kigaliDistricts= ['Nyarugenge', 'Kicukiro', 'Gasabo'];
-      return $kigaliDistricts;
+      return view('students.index')->with('students', Student::all());
+      
         //
     }
 
@@ -25,6 +30,12 @@ class StudentController extends Controller
      */
     public function create()
     {
+        $parents = ParentModel::all();
+       
+        $faculties= Faculty::all();
+        $countries= Country::all();
+       return view('students.create', compact('parents', 'faculties', 'countries'));
+       
         //
     }
 
@@ -36,7 +47,10 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Student::create($request->all());
+       
+        return redirect('/addStudent')
+  ->with('The student is added Successfully!');      //
     }
 
     /**
