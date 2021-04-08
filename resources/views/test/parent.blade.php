@@ -3,6 +3,9 @@
         <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/css/app.css" rel="stylesheet">
+    <link href="http://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"> </script>
+    <script src="http://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 
         <meta name='csrf_token' content='{{csrf_token()}}' />
         <title>
@@ -42,9 +45,9 @@
                       <a href="{{url('getStudents')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Students</a>
           
                       
-                      <a href="{{url('addCountry')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Add new Country</a>
+                      {{-- <a href="{{url('addCountry')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Add new Country</a> --}}
                       
-                      <a href="{{url('displayCountry')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Countries</a>
+                      <a href="{{url('/allCourses')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Course</a>
                    
                       
                       <a href="{{url('addAttendance')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Attendance</a>
@@ -117,3 +120,9 @@
 
     </body>
     </html>
+   <script type="text/javascript">
+         $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
+    </script>
+ 
