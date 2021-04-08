@@ -9,14 +9,14 @@
     @foreach ($countries as $country)
     
     
-<li>
 
-<tr> {{$country->country_name}}
- <th><button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+
+<tr> <th width='30%'>{{$country->country_name}}
+ <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                 <a href={{url('/editedCountry', $country->id)}} class="btn btn-warning">Edit</a></button>
         <button class="bg-white hover:bg-red-300 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"><a href={{url('/deleteCountry', $country->id)}} class="btn btn-warning">Delete</a></button></th>
  </tr>
-        </li>
+        
     @endforeach
    
    
