@@ -13,6 +13,7 @@
                 @csrf        
                 <label for="course">Course name </label> 
                 <input type="text" name='course_name' value='{{$course->course_name}}'>
+                
                 <button type='submit'>
                    Update
                 </button> 

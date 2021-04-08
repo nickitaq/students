@@ -12,10 +12,15 @@
                 @method('PUT')
                 @csrf        
                 <label for="country">Country name </label> 
-                <input type="text" name='country_name' value='{{$country->country_name}}'>
-                <button type='submit'>
-                   Update
-                </button> 
+                
+                <input 
+                type="text"
+                class="block border border-green w-full p-3 rounded mb-4"
+                name="country_name"
+                value='{{$country->country_name}}'
+                placeholder="FIRST NAME" />
+                <button type='submit' class="w-full text-center py-3 rounded bg-yellow-600 text-white hover:bg-green-dark focus:outline-none my-1">Update</button>
+                
                 <a href={{url('displayCountry')}} class="btn btn-warning">Go back to the countries</a>
 
             </form>
