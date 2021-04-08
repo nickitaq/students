@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 Route::get('/custom', function(){
     $someData = [1, 2, 3];
@@ -40,4 +40,9 @@ Route::get('deleteCountry/{id}', 'CountryController@destroy');
 Route::get('addStudent', 'StudentController@create');
 Route::post('addStudent', 'StudentController@store');
 Route::get('getStudents', 'StudentController@index');
+Route::get('addAttendance', 'AttendanceController@create');
+Route::post('submitAttendance', 'AttendanceController@store');
+Route::get('getAttendance', 'AttendanceController@index');
+
+
 

@@ -11,4 +11,8 @@ class Country extends Model
         'country_name'
     ];
     use HasFactory;
+    public function students(){
+        return $this->hasMany(Student::class);
+        
+    }
 }

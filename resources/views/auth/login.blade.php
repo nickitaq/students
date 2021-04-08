@@ -1,10 +1,13 @@
-@extends('layouts.app')
+@extends('test.parent')
 
 @section('content')
+
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+    <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+    <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full border border-green-600 border-double mt-5">
+        <div class="row justify-content-center ml-10 mr-10">
+            <div class="col-md-8">
+                <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -13,7 +16,6 @@
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
@@ -69,5 +71,7 @@
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 @endsection

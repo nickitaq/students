@@ -1,7 +1,9 @@
-@extends('layouts.app')
+@extends('test.parent')
 
 @section('content')
 <div class="container">
+    <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+        <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full border border-red-700 border-double mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -73,5 +75,7 @@
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 @endsection

@@ -28,7 +28,7 @@
           <td>{{$student->date_of_birth}} </td>
           <td>{{$student->created_at}} </td>
           <td>{{$student->updated_at}} </td>
-          <td>{{$student->country_id}} </td>
+          <td>{{$student->country->country_name}} </td>
         </tr>
         @endforeach
     </table>

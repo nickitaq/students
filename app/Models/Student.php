@@ -18,4 +18,14 @@ class Student extends Model
         return $this->belongsTo(ParentModel::class);
 
     }
+    public function country(){
+        return $this->belongsTo(Country::class);
+    }
+    //public function course(){
+
+    //    return $this->hasMany(Course::class);
+    //}
+    public function course(){
+        return $this->hasOne (Course::class);
+      }
 }
