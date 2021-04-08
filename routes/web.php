@@ -45,6 +45,8 @@ Route::post('submitAttendance', 'AttendanceController@store');
 Route::get('getAttendance', 'AttendanceController@index');
 Route::get('search', 'SearchController@index');
 
+Route::get('/allCourses', 'CourseController@index');
+
 
 
 

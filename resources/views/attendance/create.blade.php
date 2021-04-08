@@ -9,8 +9,9 @@
         type="text"
         class="block border border-grey-light w-full p-3 rounded mb-4"
         name="student_id" > 
-        <option disabled>Please choose faculty</option>
+        <option disabled>choose Student Name</option>
         @foreach ($students as $student)
+        
             <option value={{$student->id}}>{{$student->first_name}}</option>
             
         @endforeach

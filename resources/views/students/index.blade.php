@@ -1,7 +1,7 @@
 @extends('test.parent')
 @section('content')
 {{$message ?? ''}}
-<h1>List of Students</h1>
+<h1 class= 'text-center text-bold'>List of Students</h1>
 <div class="text-danger">{{ $message ?? ""}}</div>    
 <ul>
     <table class="table-auto" id="myTable">
