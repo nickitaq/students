@@ -12,7 +12,6 @@
                 <th> Last Name</th>
                 <th> Email</th>
                 <th> Faculty </th>
-                
                 <th> Parent ID</th>
                 <th> Date of Birth</th>
                 <th> Created at</th>
@@ -21,8 +20,9 @@
             </tr>     
             
         </thead>
-        @foreach($students as $student)
-            <tbody>
+        <tbody>
+            @foreach($students as $student)
+            
                 <tr>          
                     <td>{{$student->gender}} </td>
                     <td>{{$student->first_name}} </td>
@@ -35,8 +35,9 @@
                     <td>{{$student->updated_at}} </td>
                     <td>{{$student->country->country_name}} </td>
                 </tr>        
-            </tbody>        
-        @endforeach
+                   
+            @endforeach
+        </tbody> 
         <tfoot>
             <tr>
                 <th> Gender</th>
