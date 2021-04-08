@@ -43,6 +43,8 @@ Route::get('getStudents', 'StudentController@index');
 Route::get('addAttendance', 'AttendanceController@create');
 Route::post('submitAttendance', 'AttendanceController@store');
 Route::get('getAttendance', 'AttendanceController@index');
+Route::get('search', 'SearchController@index');
+
 
 
 
