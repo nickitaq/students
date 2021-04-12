@@ -150,10 +150,7 @@
                 </button>
               </div>
               <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                <div class="flex-shrink-0 flex items-center">
-                  <img class="block lg:hidden h-8 w-auto" src="https://ibb.co/hyNt7YX" alt="SMS">
-                  <img class="hidden lg:block h-8 w-auto" src="https://ibb.co/hyNt7YX" alt="SMS">
-                </div>
+                
                 <div class="hidden sm:block sm:ml-6">
                   <div class="flex space-x-4">
                     @if(Auth::check())
@@ -161,7 +158,7 @@
           
                       <a href="{{url('getStudents')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Students</a>
           
-                      
+                      <a href="{{url('addCountry')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"> Add a new Country</a>
                       <a href="{{url('displayCountry')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"> Countries</a>
                       
                       <a href="{{url('/allCourses')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Course</a>
@@ -185,7 +182,7 @@
                     @if (!Auth::check())
                     
                     <a href="{{url('register')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Register</a>
-                    <a href="{{url('login')}}#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"> Login</a>
+                    <a href="{{url('login')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"> Login</a>
                     @else 
                     <a class="dropdown-item" href="{{ route('logout') }}"   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" 
                      
@@ -207,14 +204,17 @@
           <!-- Mobile menu, show/hide based on menu state. -->
           <div class="sm:hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1">
-              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-
-              <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a>
+             
+              <a href="{{('/home')}}" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page"> <i class= "fa fa-home"> 
+                 </i>Home</a>
         
               <a href="{{url('getStudents')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Students</a>
-        
+
               <a href="{{url('displayCountry')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Countries</a>
-        
+              
+              <a href="{{url('/allCourses')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Course</a>
+
+              <a href="{{url('getAttendance')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Attendance List</a>
             </div>
           </div>
         </nav>

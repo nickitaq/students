@@ -36,7 +36,7 @@
             <div class="pagination">
             {{$countries->links()}}  
             </div>
-                <a href="{{url('/addCountry')}}" class="w-full text-center py-3 rounded bg-yellow-600 text-white hover:bg-green-dark focus:outline-none my-1">Add New Country</a>
+                <a href="{{url('/addCountry')}}" class="w-full text-center py-3 rounded bg-green-900 text-white hover:bg-green-dark focus:outline-none my-1">Add New Country</a>
 
     </div>
 

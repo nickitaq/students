@@ -38,7 +38,7 @@
                    
             @endforeach
         </tbody> 
-        <tfoot>
+        <!--<tfoot>
             <tr>
                 <th> Gender</th>
                 <th> First Name</th>
@@ -52,7 +52,7 @@
                 <th> Country </th>  
             </tr>     
             
-        </tfoot>
+        </tfoot>-->
     </table>
    
 </ul>

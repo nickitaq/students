@@ -1,7 +1,7 @@
 @extends('test.parent')
 @section('content')
 {{$message ?? ''}}
-<h1 class= 'text-center text-bold'>List of Students</h1>
+<h1 class= 'text-center text-bold'>List of Courses</h1>
 <div class="text-danger">{{ $message ?? ""}}</div>   
 
 <ul>
@@ -25,13 +25,13 @@
                     
             @endforeach
          </tbody>
-        <tfoot>
+        <!--<tfoot>
             <tr>
                 <th> no</th>
                 <th> Name</th>
                 <th> faculty</th>
             </tr>     
-        </tfoot>
+        </tfoot>-->
     </table> 
     
    

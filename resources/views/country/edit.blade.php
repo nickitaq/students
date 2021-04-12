@@ -18,7 +18,7 @@
                 class="block border border-green w-full p-3 rounded mb-4"
                 name="country_name"
                 value='{{$country->country_name}}'
-                placeholder="FIRST NAME" />
+                placeholder="Country Name" />
                 <button type='submit' class="w-full text-center py-3 rounded bg-yellow-600 text-white hover:bg-green-dark focus:outline-none my-1">Update</button>
                 
                 <a href={{url('displayCountry')}} class="btn btn-warning">Go back to the countries</a>
