@@ -1,133 +1,16 @@
 <html>
     <header>
-    <meta charset="UTF-8" />
+        <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <link href="/css/app.css" rel="stylesheet">
-    <script src="/js/app.js"></script>
-   
-  
-   <!--Regular Datatables CSS-->
-    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
-    <!--Responsive Extension Datatables CSS-->
-    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
-    <!--Button Extension Datatables CSS-->
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
+    <link href="http://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"> </script>
+    <script src="http://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 
         <meta name='csrf_token' content='{{csrf_token()}}' />
         <title>
             @yield('title')
         </title>
-        <style>
-        /* Overrides to match the Tailwind CSS */
-
-        .dataTables_wrapper {
-            padding-top: 0.25rem;
-            padding-bottom: 0.25rem
-        }
-
-        table.dataTable.no-footer {
-            border-bottom-width: 1px;
-            border-color: #d2d6dc
-        }
-
-        table.dataTable tbody td, table.dataTable tbody th {
-            padding: 0.75rem 1rem;
-            border-bottom-width: 1px;
-            border-color: #d2d6dc
-        }
-
-        div.dt-buttons {
-            padding: 1rem 1rem 1rem 0;
-            display: flex;
-            align-items: center
-        }
-
-        .dataTables_filter, .dataTables_info {
-            padding: 1rem
-        }
-
-        .dataTables_wrapper .dataTables_paginate {
-            padding: 1rem
-        }
-
-        .dataTables_filter label input {
-            padding: 0.5rem;
-            border-width: 2px;
-            border-radius: 0.5rem
-        }
-
-        .dataTables_filter label input:focus {
-            box-shadow: 0 0 0 3px rgba(118, 169, 250, 0.45);
-            outline: 0
-        }
-
-        table.dataTable thead tr {
-            border-radius: 0.5rem
-        }
-
-        table.dataTable thead tr th:not(.text-center) {
-            text-align: left
-        }
-
-        table.dataTable thead tr th {
-            background-color: #edf2f7;
-            border-bottom-width: 2px;
-            border-top-width: 1px;
-            border-color: #d2d6dc
-        }
-
-        .dataTables_wrapper .dataTables_paginate .paginate_button.current:not(.disabled), .dataTables_wrapper .dataTables_paginate .paginate_button.next:not(.disabled), .dataTables_wrapper .dataTables_paginate .paginate_button.previous:not(.disabled), .dataTables_wrapper .dataTables_paginate .paginate_button:not(.disabled), button.dt-button {
-            transition-duration: 150ms;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: #374151 !important;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            font-size: 0.75rem;
-            font-weight: 600;
-            align-items: center;
-            display: inline-flex;
-            border-width: 1px !important;
-            border-color: #d2d6dc !important;
-            border-radius: 0.375rem;
-            background: #ffffff;
-            overflow: visible;
-            margin-bottom: 0
-        }
-
-        .dataTables_wrapper .dataTables_paginate .paginate_button.next:focus:not(.disabled), .dataTables_wrapper .dataTables_paginate .paginate_button.next:hover:not(.disabled), .dataTables_wrapper .dataTables_paginate .paginate_button.previous:focus:not(.disabled), .dataTables_wrapper .dataTables_paginate .paginate_button.previous:hover:not(.disabled), .dataTables_wrapper .dataTables_paginate .paginate_button:focus:not(.disabled), .dataTables_wrapper .dataTables_paginate .paginate_button:hover:not(.disabled), button.dt-button:focus, button.dt-button:focus:not(.disabled), button.dt-button:hover, button.dt-button:hover:not(.disabled) {
-            background-color: #edf2f7 !important;
-            border-width: 1px !important;
-            border-color: #d2d6dc !important;
-            color: #374151 !important
-        }
-
-        .dataTables_wrapper .dataTables_paginate .paginate_button.current:not(.disabled) {
-            background: #6875f5 !important;
-            color: #ffffff !important;
-            border-color: #8da2fb !important
-        }
-
-        .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-            background-color: #8da2fb !important;
-            color: #ffffff !important;
-            border-color: #8da2fb !important
-        }
-
-        .dataTables_length select {
-            padding: .25rem;
-            border-radius: .25rem;
-            background-color: #edf2f7;
-        }
-
-        .dataTables_length {
-            padding-top: 1.25rem;
-        }
-    </style>
-
     
     </header>
    
@@ -162,7 +45,7 @@
                       <a href="{{url('getStudents')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Students</a>
           
                       
-                      <a href="{{url('displayCountry')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"> Countries</a>
+                      {{-- <a href="{{url('addCountry')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Add new Country</a> --}}
                       
                       <a href="{{url('/allCourses')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Course</a>
                    
@@ -176,7 +59,13 @@
                 </div>
               </div>
               <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-               
+                <!--<button class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                  <span class="sr-only">View notifications</span>
+                   Heroicon name: outline/bell 
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                  </svg>
+                </button>-->
         
                 <div class="ml-3 relative">
                     
@@ -224,27 +113,16 @@
             {{$message ?? ''}}
             @yield('content')
         </div>
-<!-- jQuery -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-<!--Datatables -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.22/b-1.6.4/b-flash-1.6.4/b-html5-1.6.4/b-print-1.6.4/datatables.min.js"></script>
-<script>
-    $(document).ready(function () {
-        let table = $('#myTable').DataTable({
-            responsive: true,
-            dom: 'Blfrtip',
-           
-            buttons: [
-                'copy', 'excel', 'pdf'
-            ]
-        }).columns.adjust().responsive.recalc();
-    });
-    </script>
-          
+
+
+
+
     </body>
     </html>
-   
+   <script type="text/javascript">
+         $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
+    </script>
  
