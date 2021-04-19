@@ -6,6 +6,7 @@
             @csrf
 
         <select 
+        
         type="text"
         class="block border border-grey-light w-full p-3 rounded mb-4"
         name="student_id" > 

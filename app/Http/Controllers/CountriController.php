@@ -17,6 +17,7 @@ class CountriController extends Controller
        return view('country.index')->with('countries', Country::paginate(5));
         
         //
+        
     }
 
     /**
