@@ -7,7 +7,7 @@
           
         {{$message ?? ''}}
             </div>
-            
+
             Edit Country 
             <form action="{{url('updateCountry', $country->id)}}" method="POST">
                 @method('PUT')

@@ -8,7 +8,6 @@ use App\Models\ParentModel;
 use App\Models\Country;
 use App\Models\Student;
 
-
 class StudentController extends Controller
 {
     /**
@@ -21,7 +20,7 @@ class StudentController extends Controller
       return view('students.index')->with('students', Student::all());
       
         //
-        
+
     }
 
     /**

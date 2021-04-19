@@ -1,9 +1,14 @@
-@extends('test.parent')
+@extends('test.parent');
 @section('content')
-    <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-        {{$message ?? ''}}
-        <th><h1 class='text-center'>List of Countries.</h1></th>
-        <div class="text-danger">{{ $message ?? ""}}</div>  
+<div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+{{$message ?? ''}}
+<th><h1 class='text-center'>List of Countries.</h1></th>
+<div class="text-danger">{{ $message ?? ""}}</div>  
+<ul>
+    <table>
+    @foreach ($countries as $country)
+    
+    
 
             <table id="myTable">
                 <thead>
