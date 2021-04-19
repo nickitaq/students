@@ -18,6 +18,7 @@ class CourseController extends Controller
         return view('course.index', compact('courses'));
     }
 
+    
     /**
      * Show the form for creating a new resource.
      *

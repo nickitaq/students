@@ -14,7 +14,8 @@
                     <option>Male</option>
                     <option>Female</option>
                 </select>
-            
+             
+                
                 <input 
                     type="text"
                     class="block border border-grey-light w-full p-3 rounded mb-4"

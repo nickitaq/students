@@ -1,7 +1,7 @@
 @extends('test.parent')
 @section('content')
 {{$message ?? ''}}
-<h1 class= 'text-center text-bold'>List of Students</h1>
+<h1 class= 'text-center text-bold'>List of Courses</h1>
 <div class="text-danger">{{ $message ?? ""}}</div>   
 
 <ul>
@@ -23,11 +23,9 @@
                     <td>{{$c->course_name}} </td>
                     <td>{{$c->faculty->name}} </td>
                     
-                    
-                </tr>        
-            </tbody>        
-        @endforeach
-        <tfoot>
+            @endforeach
+         </tbody>
+        <!--<tfoot>
             <tr>
                 <th> no</th>
                 <th> Name</th>
@@ -35,9 +33,15 @@
                 
                
             </tr>     
+<<<<<<< HEAD
+        </tfoot>-->
+    </table> 
+    
+=======
             
         </tfoot>
     </table>
+>>>>>>> ecdb647946068671a9bc57045f36752a16e1f187
    
 </ul>
 

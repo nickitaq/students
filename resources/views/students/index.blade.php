@@ -18,7 +18,8 @@
                 <th> Created at</th>
                 <th> Updated at</th>
                 <th> Country </th>  
-            </tr>     
+            </tr> 
+                
             
         </thead>
         @foreach($students as $student)
@@ -35,9 +36,16 @@
                     <td>{{$student->updated_at}} </td>
                     <td>{{$student->country->country_name}} </td>
                 </tr>        
+<<<<<<< HEAD
+                   
+            @endforeach
+        </tbody> 
+        <!--<tfoot>
+=======
             </tbody>        
         @endforeach
         <tfoot>
+>>>>>>> ecdb647946068671a9bc57045f36752a16e1f187
             <tr>
                 <th> Gender</th>
                 <th> First Name</th>
@@ -51,7 +59,7 @@
                 <th> Country </th>  
             </tr>     
             
-        </tfoot>
+        </tfoot>-->
     </table>
    
 </ul>
