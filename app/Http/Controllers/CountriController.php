@@ -2,24 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Faculty;
-use App\Models\ParentModel;
 use App\Models\Country;
-use App\Models\Student;
+use Illuminate\Http\Request;
 
-
-class StudentController extends Controller
+class CountriController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-      return view('students.index')->with('students', Student::all());
-      
+       return view('country.index')->with('countries', Country::paginate(5));
+        
         //
     }
 
@@ -30,12 +26,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        $parents = ParentModel::all();
-       
-        $faculties= Faculty::all();
-        $countries= Country::all();
-       return view('students.create', compact('parents', 'faculties', 'countries'));
-       
+        return view ('country.create'); 
         //
     }
 
@@ -47,10 +38,11 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        Student::create($request->all());
-       
-        return redirect('/addStudent')
-  ->with('The student is added Successfully!');      //
+         //insert into countries set country='Rwanda;
+        /*$savedCountryIntoDatabase =*/ Country::create($request->except('_token'));
+        //return ["message"=>"new country is saved", "country"=> $savedCountryIntoDatabase];
+        return view('country.create')->with('message','The country has been added Successfully!');
+
     }
 
     /**
@@ -61,6 +53,7 @@ class StudentController extends Controller
      */
     public function show($id)
     {
+       return view('country.edit')->with('country', Country::find($id));
         //
     }
 
@@ -84,6 +77,12 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
+       $country= Country::find($id); // I'm verifying if that record based on it's ID
+       $country->update($request->except('_token')); // now  $country object of record we got from datase is 
+     
+       return view('country.edit')
+       ->with('message', 'The country is updated Successfully!')->with('country', $country) ;
+       
         //
     }
 
@@ -95,6 +94,10 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+       $country= Country::find($id);
+       $country-> delete();
+      // return view('country.index')->with('message', 'The country has been Deleted!');
+        return redirect()->back()->with('message', 'The country has been Deleted!');
+      //
     }
 }

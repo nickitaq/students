@@ -15,7 +15,6 @@
  
       
    </tr>
-   
             @foreach($attendances as $st) 
                 <tr>
                 <td class="py-2 px-4 text-left" width="10%">{{$st->student->first_name }}</td>

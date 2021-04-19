@@ -31,12 +31,15 @@ Route::get('/child1', function(){
 });
 
 Route::get('/child2', 'TestController@child2');
-Route::get('/addCountry', 'CountryController@create');
-Route::post('/insertCountry', 'CountryController@store');
-Route::get('/displayCountry', 'CountryController@index');
-Route::get('/editedCountry/{id}', 'CountryController@show');
-Route::put('/updateCountry/{id}', 'CountryController@update');
-Route::get('deleteCountry/{id}', 'CountryController@destroy');
+//Route::get('/addCountry', 'CountriController@create');
+Route::get('/addCountry', function(){
+    return view ('country.create');
+});
+Route::post('/insertCountry', 'CountriController@store');
+Route::get('/displayCountry', 'CountriController@index');
+Route::get('/editedCountry/{id}', 'CountriController@show');
+Route::put('/updateCountry/{id}', 'CountriController@update');
+Route::get('deleteCountry/{id}', 'CountriController@destroy');
 Route::get('addStudent', 'StudentController@create');
 Route::post('addStudent', 'StudentController@store');
 Route::get('getStudents', 'StudentController@index');
